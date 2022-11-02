@@ -1,3 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background-color: bisque;
+  background-color: bisque;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todo-section {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 60%;
+}
+
+.head-refresh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid rgb(192, 189, 189);
+}
+
+.head-refresh h1 {
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.head-refresh div {
+  font-size: 25px;
+  color: gray;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  padding: 10px;
+  padding-right: 23px;
+  border-bottom: 1px solid rgb(192, 189, 189);
+}
+
+form input {
+  border: none;
+  padding: 10px;
+  width: 60%;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form input::placeholder {
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+form button {
+  background-color: transparent;
+  border: none;
+  transform: rotate(90deg);
+  font-size: 25px;
+  cursor: pointer;
+  color: gray;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  padding: 10px;
+  padding-right: 14px;
+}
+
+.main-list {
+  display: flex;
+  justify-content: flex-start;
+  width: 25%;
+  font-size: 18px;
+}
+
+.main-list div {
+  margin-left: 8%;
+}
+
+.info {
+  font-size: 25px;
+  color: gray;
+  cursor: pointer;
+}
+
+.clear-tasks {
+  border: none;
+  max-width: 100%;
+  background-color: white;
+  font-size: 20px;
+  font-weight: 400;
+  padding-block: 20px;
+  color: gray;
+  cursor: pointer;
 }
