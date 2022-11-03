@@ -28,7 +28,6 @@ export const loadList = () => {
   taskListSection.replaceChildren();
   taskList.map((item) => {
     const list = document.createElement('li');
-    //list.id = item.id;
     const mainList = document.createElement('div');
     mainList.className = 'main-list';
     const checkBox = document.createElement('input');
@@ -42,10 +41,7 @@ export const loadList = () => {
     list.appendChild(mainList);
     const menu = document.createElement('img');
     menu.className = 'info';
-    //const icon = document.createElement('p');
     menu.src = menuIcon;
-    //icon.className = 'fa-solid fa-ellipsis-vertical';
-   // option.appendChild(icon);
     menu.id = item.id
     menu.onclick = edit;
     list.appendChild(menu);
