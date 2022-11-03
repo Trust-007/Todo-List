@@ -28,15 +28,16 @@ export const loadList = () => {
   taskListSection.replaceChildren();
   taskList.map((item) => {
     const list = document.createElement('li');
+    //list.id = item.id;
     const mainList = document.createElement('div');
-    mainList.addEventListener('focusout', checkFocus);
     mainList.className = 'main-list';
-    mainList.id = item.id;
     const checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     mainList.appendChild(checkBox);
     const listDescription = document.createElement('div');
+    listDescription.addEventListener('focusout', checkFocus);
     listDescription.innerHTML = item.description;
+    listDescription.id = item.id;
     mainList.appendChild(listDescription);
     list.appendChild(mainList);
     const menu = document.createElement('img');

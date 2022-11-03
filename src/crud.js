@@ -25,18 +25,21 @@ export const add = (form) => {
   };
 };
 
-// Edit and Remove
+// Edit or Remove
 
 let hasFocused = false;
 export const edit = (e) => {
   const itemId = e.target.id;
+  const specific = e.target;
   if (hasFocused === false) {
     e.target.src = trashIcon;
     const parent = e.target.parentElement;
+    parent.id = itemId
     parent.style.backgroundColor = 'yellow';
     parent.firstChild.children[1].contentEditable = 'true';
+    parent.firstChild.children[1].style.border = '1px solid black';
     hasFocused = true;
-  } else {
+  } else if (hasFocused === true && specific.parentElement.id !== '') {
     const taskList = JSON.parse(localStorage.getItem('todo'));
     const filteredBooks = taskList.filter((item) => {
       if (itemId !== item.id && taskList.length !== 1) {
@@ -59,7 +62,8 @@ export const edit = (e) => {
 // update Edit in localStorage
 
 export const checkFocus = (e) => {
-  const element = e.target.parentElement.parentElement;
+  const element = e.target.parentElement;
+  e.target.parentElement.id = e.target.id;
   element.style.backgroundColor = 'white';
   element.children[1].src = menuIcon;
   e.target.contentEditable = 'false';
