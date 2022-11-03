@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
 import { add, edit, checkFocus } from './crud';
+import menuIcon from './menu-icon.png';
 
 const taskListSection = document.getElementById('task-list');
 const form = document.getElementById('form');
@@ -23,12 +24,14 @@ export const loadList = () => {
       }
     }
   }
+
   taskListSection.replaceChildren();
   taskList.map((item) => {
     const list = document.createElement('li');
     const mainList = document.createElement('div');
-    mainList.addEventListener('focusout', checkFocus)
+    mainList.addEventListener('focusout', checkFocus);
     mainList.className = 'main-list';
+    mainList.id = item.id;
     const checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     mainList.appendChild(checkBox);
@@ -36,15 +39,15 @@ export const loadList = () => {
     listDescription.innerHTML = item.description;
     mainList.appendChild(listDescription);
     list.appendChild(mainList);
-    const option = document.createElement('div');
-    option.className = 'info';
+    const menu = document.createElement('img');
+    menu.className = 'info';
     //const icon = document.createElement('p');
-    option.innerHTML = 'i';
+    menu.src = menuIcon;
     //icon.className = 'fa-solid fa-ellipsis-vertical';
    // option.appendChild(icon);
-    option.id = item.id
-    option.onclick = edit;
-    list.appendChild(option);
+    menu.id = item.id
+    menu.onclick = edit;
+    list.appendChild(menu);
     return taskListSection.appendChild(list);
   });
 }

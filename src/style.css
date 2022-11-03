@@ -97,7 +97,8 @@ ul li {
 }
 
 .main-list div {
-  margin-left: 5%;
+  margin-left: 4%;
+  padding: 10px;
   width: 100%;
 }
 
