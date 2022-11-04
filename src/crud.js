@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { loadList } from '.';
-import menuIcon from './menu-icon.png';
-import trashIcon from './trash-icon.png';
+import menuicon from './menu-icon.png';
+import trashicon from './trash-icon.png';
 
 // Add task
 
@@ -32,7 +32,7 @@ let hasFocused = false;
 export const edit = (e) => {
   const itemId = e.target.id;
   const grandParent = e.target.parentElement.parentElement;
-  grandParent.children[1].src = trashIcon;
+  grandParent.children[1].src = trashicon;
   grandParent.id = itemId;
   e.target.style.backgroundColor = 'yellow';
   e.target.style.border = '1px solid black';
@@ -74,7 +74,7 @@ export const remove = (e) => {
 export const checkFocus = (e) => {
   const element = e.target.parentElement.parentElement;
   element.style.backgroundColor = 'white';
-  element.children[1].src = menuIcon;
+  element.children[1].src = menuicon;
   e.target.contentEditable = 'false';
   const taskList = JSON.parse(localStorage.getItem('todo'));
   const updateDescription = taskList.filter((item) => {

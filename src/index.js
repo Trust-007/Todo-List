@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 import { add, edit, checkFocus, remove } from './crud';
 import { taskCompleted, clearCompleted, refresh } from './completed';
-import menuIcon from './menu-icon.png';
+import menuicon from './menu-icon.png';
 
 const taskListSection = document.getElementById('task-list');
 const form = document.getElementById('form');
@@ -45,7 +45,7 @@ export const loadList = () => {
     list.appendChild(mainList);
     const menu = document.createElement('img');
     menu.className = 'info';
-    menu.src = menuIcon;
+    menu.src = menuicon;
     menu.onclick = remove;
     list.appendChild(menu);
     return taskListSection.appendChild(list);
