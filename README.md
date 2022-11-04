@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-You can check out the project using this [live demo link](https://trust-007.github.io/Todo-List/)
+You can check out the project using this [live demo link](https://trust-007.github.io/Todo-List/dist)
 
 ## Getting Started
 
