@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { loadList } from '.';
-import menuicon from './menu-icon.png';
+import menuicon from './menu-Icon.png';
 import trashicon from './trash-icon.png';
 
 // Add task

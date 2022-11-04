@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 import { add, edit, checkFocus, remove } from './crud';
 import { taskCompleted, clearCompleted, refresh } from './completed';
-import menuicon from './menu-icon.png';
+import menuicon from './menu-Icon.png';
 
 const taskListSection = document.getElementById('task-list');
 const form = document.getElementById('form');
