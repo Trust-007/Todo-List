@@ -5,12 +5,13 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import { add, edit, checkFocus } from './crud';
+import { add, edit, checkFocus, remove } from './crud';
+import { taskCompleted, clearCompleted, refresh } from './completed';
 import menuIcon from './menu-icon.png';
 
 const taskListSection = document.getElementById('task-list');
 const form = document.getElementById('form');
-add(form)
+add(form);
 
 export const loadList = () => {
   const taskList = JSON.parse(localStorage.getItem('todo')) || [];
@@ -31,21 +32,35 @@ export const loadList = () => {
     const mainList = document.createElement('div');
     mainList.className = 'main-list';
     const checkBox = document.createElement('input');
+    checkBox.id = item.id;
+    checkBox.onchange = taskCompleted;
     checkBox.type = 'checkbox';
     mainList.appendChild(checkBox);
     const listDescription = document.createElement('div');
-    listDescription.addEventListener('focusout', checkFocus);
     listDescription.innerHTML = item.description;
     listDescription.id = item.id;
+    listDescription.onclick = edit;
+    listDescription.addEventListener('focusout', checkFocus);
     mainList.appendChild(listDescription);
     list.appendChild(mainList);
     const menu = document.createElement('img');
     menu.className = 'info';
     menu.src = menuIcon;
-    menu.id = item.id
-    menu.onclick = edit;
+    menu.onclick = remove;
     list.appendChild(menu);
     return taskListSection.appendChild(list);
   });
 }
 loadList();
+
+// get clear tasks button
+
+const clearTasksBtn = document.getElementById('clear-tasks');
+
+clearTasksBtn.onclick = clearCompleted;
+
+// get refresh button
+
+const refreshBtn = document.getElementById('refresh');
+
+refreshBtn.onclick = refresh;
