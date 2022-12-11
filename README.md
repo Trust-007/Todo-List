@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-You can check out the project using this [live demo link](https://trust-007.github.io/Todo-List/dist)
+You can check out the project using this [live demo link](https://todo-list-epdf.onrender.com/)
 
 ## Getting Started
 
